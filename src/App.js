@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Signin, Feed } from "./pages"
+import { createContext, useState } from "react"
+import { ThemeProvider } from "styled-components"
+import { lightTheme, darkTheme } from "./constance/theme"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import { ThemeContext } from "./context/themeSwitch"
 
-function App() {
+export default function App() {
+  const [theme, setTheme] = useState("dark")
+
+  const toggleTheme = () => {
+    theme === "dark" ? setTheme("light") : setTheme("dark")
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // ThemeProvider will toggle the dark/light mode
+    <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      {/* Theme Switch */}
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        {/* Router */}
+        <Router>
+          <Route path={"/signin"}>
+            <Signin />
+          </Route>
+          <Route path={"/feed"}>
+            <Feed />
+          </Route>
+        </Router>
+      </ThemeContext.Provider>
+    </ThemeProvider>
+  )
 }
-
-export default App;
