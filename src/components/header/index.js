@@ -19,7 +19,7 @@ Header.Inner = function HeaderInner({children, ...restProps}) {
 }
 
 Header.Logout = function HeaderLogout({children, ...restProps}) {
-  return <Logout >{children}</Logout>
+  return <Logout {...restProps} >{children}</Logout>
 }
 
 Header.Theme = function HeaderTheme({children, ...restProps}) {

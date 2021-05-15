@@ -1,10 +1,14 @@
 import Header from "../components/header"
 import styled from "styled-components/macro"
+import { useContext } from "react"
+
+// Context
 import {ThemeContext} from "../context/themeSwitch"
+import {FirebaseContext} from "../context/firebase"
 
 // Icons
 import {RiSunFill} from "react-icons/ri"
-import { useContext } from "react"
+import {BsMoon} from "react-icons/bs"
 
 // Styles
 const Wrapper = styled.div`
@@ -15,23 +19,23 @@ const Wrapper = styled.div`
 
 export function FeedContainer() {
   const {setTheme, theme} = useContext(ThemeContext)
-
-  console.log(setTheme,theme)
-  
+    
   const toggleTheme = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark")
   }
+
+  const Firebase = useContext(FirebaseContext)
 
   return (
     <Wrapper>
       {/* Header */}
       <Header>
         <Header.Buttons>
-          <Header.Logout>
+          <Header.Logout onClick={() => Firebase.auth.signOut()}>
             Logout
           </Header.Logout>
-          <Header.Theme onClick={toggleTheme}>
-            <RiSunFill />
+          <Header.Theme onClick={toggleTheme} theme={theme}>
+            {theme === "light" ? <BsMoon/> : <RiSunFill /> }
           </Header.Theme>
         </Header.Buttons>
         <Header.Searchbox>

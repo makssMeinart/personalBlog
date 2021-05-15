@@ -10,7 +10,7 @@ export const Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 700px;
+  max-width: 85%;
   height: inherit;
   margin: 0 auto;
 `
@@ -32,15 +32,18 @@ export const Logout = styled.button`
 `
 
 export const Theme = styled.button`
-  background-color: ${props => props.theme.description};
+  background-color: ${({theme}) => theme === "light" ? "#000" : "whitesmoke"};
   border-radius: 10px;
-  width: 50px;
+  border: none;
+  width: 45px;
+  height: 20px;
   cursor: pointer;
-  text-align: right;
+  text-align: ${({theme}) => theme === "dark" ? "right" : "left"};
 
   svg {
-    heihgt: 100%;
+  color: ${({theme}) => theme === "light" ? "whitesmoke" : "#000"};
   }
+
 `
 
 export const Searchbox = styled.div`

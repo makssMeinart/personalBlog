@@ -11,7 +11,6 @@ export function SigninContainer() {
  const signIn = async () => {
    try {
       const credentials = await auth.signInWithPopup(provider)
-      console.log(auth) 
    }
    catch(err) {
      console.error(err)

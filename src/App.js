@@ -3,28 +3,40 @@ import { createContext, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "./constance/theme"
 import { BrowserRouter as Router, Route } from "react-router-dom"
+import * as ROUTES from "./constance/routePath"
 import { ThemeContext } from "./context/themeSwitch"
+
+// Helpers
+import { IsUserRedirect, ProtectedRoute } from "./helpers/routes"
+
+import {useAuthListener } from "./hooks"
+
 
 export default function App() {
   const [theme, setTheme] = useState("dark")
+  const { user } = useAuthListener()
 
-  const toggleTheme = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark")
-  }
-
+  
   return (
     // ThemeProvider will toggle the dark/light mode
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       {/* Theme Switch */}
-      <ThemeContext.Provider value={{theme, setTheme}}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
         {/* Router */}
         <Router>
-          <Route path={"/signin"}>
+          {/* Login */}
+          <IsUserRedirect
+            user={user}
+            loggedInPath={ROUTES.FEED}
+            path={"/"}
+            exact
+          >
             <Signin />
-          </Route>
-          <Route path={"/feed"}>
-            <Feed />
-          </Route>
+          </IsUserRedirect>
+          {/* Feed */}
+          <ProtectedRoute user={user} path={ROUTES.FEED}>
+            <Feed/>
+          </ProtectedRoute>
         </Router>
       </ThemeContext.Provider>
     </ThemeProvider>

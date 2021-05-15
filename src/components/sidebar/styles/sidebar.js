@@ -1,7 +1,7 @@
 import styled from "styled-components/macro"
 
 export const Container = styled.div`
-  width: 300px;
+  min-width: 300px;
   min-height: 100vh;
   background-color: ${(props) => props.theme.blockBg};
 
