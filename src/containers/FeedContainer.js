@@ -9,12 +9,15 @@ import {FirebaseContext} from "../context/firebase"
 // Icons
 import {RiSunFill} from "react-icons/ri"
 import {BsMoon} from "react-icons/bs"
+import { Feed } from "../components/feed"
 
 // Styles
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100vh;
+    background: ${props => props.theme.backgroundColor};
 `
 
 export function FeedContainer() {
@@ -43,7 +46,14 @@ export function FeedContainer() {
         </Header.Searchbox>
       </Header>
       {/* Header END */}
-      <div>Feed</div>
+      <Feed>
+        <Feed.Searchbox>
+          <Feed.Search>
+            <Feed.SearchInput placeholder="Search for something.." />
+            <Feed.SearchButton/>
+          </Feed.Search>
+        </Feed.Searchbox>
+      </Feed>
     </Wrapper>
   )
 }
