@@ -10,6 +10,9 @@ export const Container = styled.div`
 export const Inner = styled.div`
   padding: 3rem 0;
   height: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `
 
 export const Searchbox = styled.div`
@@ -32,9 +35,10 @@ export const SearchInput = styled.input`
   width: 100%;
   background: none;
   border: none;
-  padding: 0 0.5rem;
-  margin-left: 0.5rem;
+  padding: 0 0.7rem;
+  margin-left: 1rem;
   color: ${(props) => props.theme.title};
+  align-self: center;
 
   :focus {
     outline: none;
@@ -64,3 +68,4 @@ export const SearchButton = styled.button`
     margin-left: 5px;
   }
 `
+export const Content = styled.div``

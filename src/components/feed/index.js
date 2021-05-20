@@ -5,10 +5,9 @@ import {
   SearchButton,
   Container,
   Inner,
+  Content,
 } from "./styles/feed"
-
 // Icons
-import { IoSendSharp } from "react-icons/io5"
 
 export function Feed({ children, ...restProps }) {
   return (
@@ -26,14 +25,14 @@ Feed.Search = function FeedSearch({ children, ...restProps }) {
   return <Search {...restProps}>{children}</Search>
 }
 
-Feed.SearchInput = function FeedSearchInput({ ...restProps }) {
-  return <SearchInput {...restProps} />
+Feed.SearchInput = function FeedSearchInput({setMessage, ...restProps }) {
+  return <SearchInput onChange={e => setMessage(e.target.value)} {...restProps} />
 }
 
 Feed.SearchButton = function FeedSearchButton({ children, ...restProps }) {
-  return (
-    <SearchButton {...restProps}>
-      <IoSendSharp />
-    </SearchButton>
-  )
+  return <SearchButton {...restProps} >{children}</SearchButton>
+}
+
+Feed.Content = function FeedContent({ children, ...restProps }) {
+  return <Content {...restProps}>{children}</Content>
 }

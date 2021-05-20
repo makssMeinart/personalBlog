@@ -1,22 +1,18 @@
-import { Signin, Feed } from "./pages"
+import { Signin, Feed, CreateArticle } from "./pages"
 import { createContext, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "./constance/theme"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import * as ROUTES from "./constance/routePath"
 import { ThemeContext } from "./context/themeSwitch"
-
 // Helpers
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes"
-
-import {useAuthListener } from "./hooks"
-
+import { useAuthListener } from "./hooks"
 
 export default function App() {
   const [theme, setTheme] = useState("dark")
   const { user } = useAuthListener()
 
-  
   return (
     // ThemeProvider will toggle the dark/light mode
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
@@ -35,7 +31,10 @@ export default function App() {
           </IsUserRedirect>
           {/* Feed */}
           <ProtectedRoute user={user} path={ROUTES.FEED}>
-            <Feed/>
+            <Feed />
+          </ProtectedRoute>
+          <ProtectedRoute user={user} path={ROUTES.CREATEARTICLE}>
+            <CreateArticle />
           </ProtectedRoute>
         </Router>
       </ThemeContext.Provider>
