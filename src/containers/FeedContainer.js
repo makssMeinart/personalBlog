@@ -12,6 +12,8 @@ import { Feed } from "../components/feed"
 import { IoSendSharp, IoTerminal } from "react-icons/io5"
 import { Post } from "../components/post"
 import useContent from "../helpers/useDb"
+import Article from "../components/article"
+import { Route } from "react-router"
 // Styles
 const Wrapper = styled.div`
   display: flex;
@@ -29,6 +31,7 @@ export function FeedContainer() {
     <Wrapper>
       <Header />
       <Feed>
+        
         <Feed.Searchbox>
           <Feed.Search>
             <Feed.SearchInput
@@ -45,6 +48,9 @@ export function FeedContainer() {
           {content.map((item) => {
             if (item.type === "post") {
               return <Post key={item.uui} item={item} />
+            }
+            if (item.type === "article") {
+              return <Article key={item.uui} item={item} />
             }
           })}
         </Feed.Content>

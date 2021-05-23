@@ -6,22 +6,18 @@ export default function useContent(target) {
   const { firebase } = useContext(FirebaseContext)
 
   useEffect(() => {
-    firebase
+    const unsubscribe = firebase
       .firestore()
       .collection(target)
-      .get()
-      .then((resp) => {
-        const allContent = resp.docs.map((contentObj) => ({
-          ...contentObj.data(),
-        }))
+      .orderBy("fullDate", "desc")
+      .onSnapshot((snapshot) =>
+        setContent(snapshot.docs.map((doc) => doc.data()))
+      )
 
-        setContent(allContent)
-      })
-      .catch((error) => {
-        console.error(error.message)
-      })
-
-  }, [content])
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
   return { [target]: content }
 }

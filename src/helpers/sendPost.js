@@ -1,5 +1,3 @@
-import { useContext } from "react"
-import { FirebaseContext } from "../context/firebase"
 import { db } from "../lib/firebase-prod"
 
 export function sendPost(message,setMessage) {
@@ -15,6 +13,7 @@ export function sendPost(message,setMessage) {
       type: "post",
       content: message,
       time: new Date().toISOString().replace('-', '/').split('T')[0].replace('-', '/'),
+      fullDate: new Date(),
       uui: uuidv4()
     })
   }
