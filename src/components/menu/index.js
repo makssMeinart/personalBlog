@@ -1,6 +1,4 @@
-import { menuData } from "../../fixtures/menuData"
 import { Link } from "react-router-dom"
-
 // Icons
 import {
   Container,
@@ -12,9 +10,11 @@ import {
   DropdownItem,
 } from "./styles/menu"
 import { useState } from "react"
+import { UpdateSidebar } from "../../fixtures/menuData"
 
 export default function Menu({ children, ...restProps }) {
-  const [showDropdown, setShowDropdown] = useState(true)
+  const [showDropdown, setShowDropdown] = useState(false)
+  const menuData = UpdateSidebar()
 
   const toggleDropdown = () => {
     return setShowDropdown((showDropdown) => !showDropdown)
@@ -55,7 +55,14 @@ export default function Menu({ children, ...restProps }) {
                   showDropdown === true &&
                   item.children.map((article, index) => (
                     <DropdownItem key={index}>
-                      <Link to={article.path}>{article.title}</Link>
+                      <Link
+                        to={{
+                          pathname: `/article/${article.path}`,
+                          state: article.fullArticle,
+                        }}
+                      >
+                        {article.title}
+                      </Link>
                     </DropdownItem>
                   ))}
               </MenuItemDropdown>

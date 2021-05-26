@@ -32,6 +32,19 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+// Global Dropdown Menu styles
+export const LockScreen = createGlobalStyle`
+  body {
+     overflow-y: hidden;
+  }
+`
+
+export const UnlockScreen = createGlobalStyle`
+  body {
+    overflow-y: none;
+  }
+`
+
 // Often used Container
 export const Container = styled.div`
   max-width: 85%;
@@ -45,5 +58,5 @@ export const Inner = styled.div`
   height: inherit;
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding: 30px 0;
 `

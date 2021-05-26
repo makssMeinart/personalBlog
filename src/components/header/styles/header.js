@@ -48,6 +48,8 @@ export const Theme = styled.button`
 
 export const Searchbox = styled.div`
   background: transparent;
+
+
 `
 
 export const Search = styled.input`
@@ -57,7 +59,50 @@ export const Search = styled.input`
   padding: 0 1rem;
   color: ${props => props.theme.title};
 
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
+
   :focus {
     outline: none;
+  }
+`
+
+export const Burger = styled.div`
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+
+  @media screen and (max-width: 1100px) {
+    display: block;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: ${props => props.theme.title};
+    transform: translateY(-50%);
+    top: 50%;
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: ${props => props.theme.title};
+    transform: translateY(-50%);
+    bottom: 0;
+  }
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: ${props => props.theme.title};
   }
 `

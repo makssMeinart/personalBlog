@@ -6,16 +6,22 @@ import {
   Theme,
   Searchbox,
   Search,
+  Burger,
 } from "./styles/header"
 // Icons
 import { RiSunFill } from "react-icons/ri"
 import { BsMoon } from "react-icons/bs"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { FirebaseContext } from "../../context/firebase"
 import { ThemeContext } from "../../context/themeSwitch"
+import HeaderDropdown from "../headerDropdown"
+import { UnlockScreen } from "../../constance/theme"
 
 export default function Header({ children, ...restProps }) {
   const { setTheme, theme } = useContext(ThemeContext)
+  // The dropdown state if true then show drop down else we will remove the global styling of
+  // locking the body from scrolling
+  const [dropdownState, setDropdownState] = useState(true)
   const Firebase = useContext(FirebaseContext)
 
   const toggleTheme = () => {
@@ -36,7 +42,11 @@ export default function Header({ children, ...restProps }) {
         <Header.Searchbox>
           <Header.Search />
         </Header.Searchbox>
+        <Header.Burger
+          onClick={() => setDropdownState((dropdownState) => !dropdownState)}
+        />
       </Inner>
+      <HeaderDropdown dropdownState={dropdownState} />
     </Container>
   )
 }
@@ -63,4 +73,12 @@ Header.Searchbox = function HeaderSearchbox({ children, ...restProps }) {
 
 Header.Search = function HeaderSearch({ children, ...restProps }) {
   return <Search placeholder="Search the blog">{children}</Search>
+}
+
+Header.Burger = function HeaderBurger({ ...restProps }) {
+  return (
+    <Burger {...restProps}>
+      <div></div>
+    </Burger>
+  )
 }

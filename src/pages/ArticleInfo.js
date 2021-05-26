@@ -6,11 +6,6 @@ import ArticleInfoContainer from "../containers/ArticleInfoContainer"
 
 const Wrapper = styled.div`
   display: flex;
-
-  span {
-    height: 100vh;
-    background-color: pink;
-  }
 `
 
 export default function ArticleInfo() {

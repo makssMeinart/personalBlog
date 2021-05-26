@@ -1,4 +1,4 @@
-import { Signin, Feed, CreateArticle } from "./pages"
+import { Signin, Feed, CreateArticle, AboutMe } from "./pages"
 import { createContext, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "./constance/theme"
@@ -9,6 +9,7 @@ import { ThemeContext } from "./context/themeSwitch"
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes"
 import { useAuthListener } from "./hooks"
 import ArticleInfo from "./pages/ArticleInfo"
+import MyWork from "./pages/MyWork"
 
 export default function App() {
   const [theme, setTheme] = useState("dark")
@@ -39,6 +40,12 @@ export default function App() {
           </ProtectedRoute>
           <ProtectedRoute user={user} path={"/article/:id"} >
             <ArticleInfo/>
+          </ProtectedRoute>
+          <ProtectedRoute user={user} path={ROUTES.MYWORK} >
+            <MyWork />
+          </ProtectedRoute>
+          <ProtectedRoute user={user} path={ROUTES.ABOUTME} >
+            <AboutMe />
           </ProtectedRoute>
         </Router>
       </ThemeContext.Provider>

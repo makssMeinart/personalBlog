@@ -1,3 +1,5 @@
 export const FEED = "/feed"
 export const SIGNIN = "/"
 export const CREATEARTICLE = "/create-article"
+export const ABOUTME = "/about-me"
+export const MYWORK = "/my-work"

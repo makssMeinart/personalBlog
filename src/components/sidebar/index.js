@@ -18,10 +18,6 @@ Sidebar.Top = function SidebarTop({ children, ...restProps }) {
   return <Top {...restProps}>{children}</Top>
 }
 
-Sidebar.Holder = function SidebarHolder({ children, ...restProps }) {
-  return <Holder {...restProps}>{children}</Holder>
-}
-
 Sidebar.Icon = function SidebarIcon({ src, ...restProps }) {
   return (
     <Icon {...restProps}>

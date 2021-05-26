@@ -40,9 +40,14 @@ export const Info = styled.div`
   align-items: center;
   margin-top: 21px;
 
+
   div {
     display: flex;
-    align-items
+    align-items;
+
+    @media screen and (max-width: 420px) {
+      flex-direction: column;
+    }
   }
 
   span {
@@ -51,6 +56,10 @@ export const Info = styled.div`
     border-radius: 50%;
     background-color: ${(props) => props.theme.time};
     align-self: center;
+
+    @media screen and (max-width: 420px) {
+      display: none;
+    }
   }
 `
 
@@ -60,6 +69,10 @@ export const Time = styled.p`
   color: ${(props) => props.theme.time};
   padding-right: 15px;
   margin: 0;
+
+  @media screen and (max-width: 420px) {
+    padding-bottom: .2rem;
+  }
 `
 
 export const Name = styled.p`
@@ -68,6 +81,10 @@ export const Name = styled.p`
   color: ${(props) => props.theme.time};
   padding-left: 15px;
   margin: 0;
+
+  @media screen and (max-width: 420px) {
+    padding-left: 0;
+  }
 `
 
 export const ReadMore = styled(Link)`

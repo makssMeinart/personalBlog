@@ -21,10 +21,11 @@ export const Holder = styled.div`
 
   span {
     width: 6px;
-    max-height: 6px;
+    min-height: 6px;
     border-radius: 50%;
-    backgroundcolor: ${(props) => props.theme.title} !importand;
+    background-color: ${(props) => props.theme.title};
     align-self: center;
+    transform: translateY(-1.5px);
   }
 `
 export const InfoHolder = styled.div`
@@ -34,6 +35,7 @@ export const InfoHolder = styled.div`
 `
 export const Image = styled.img`
   max-height: 230px;
+  object-fit: cover;
 `
 
 export const BackHome = styled(Link)`
