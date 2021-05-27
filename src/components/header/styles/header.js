@@ -46,28 +46,6 @@ export const Theme = styled.button`
 
 `
 
-export const Searchbox = styled.div`
-  background: transparent;
-
-
-`
-
-export const Search = styled.input`
-  background-color: ${props => props.theme.sidebarTop};
-  border: none;
-  height: 35px;
-  padding: 0 1rem;
-  color: ${props => props.theme.title};
-
-  @media screen and (max-width: 1100px) {
-    display: none;
-  }
-
-  :focus {
-    outline: none;
-  }
-`
-
 export const Burger = styled.div`
   position: relative;
   width: 30px;

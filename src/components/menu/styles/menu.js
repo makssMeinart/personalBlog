@@ -15,6 +15,7 @@ export const MenuItemTop = styled.div`
   display: flex;
   align-items: center;
   transition: .1s linear background-color;
+  cursor: pointer;
 
   :hover {
     background-color: ${(props) => props.theme.accent};

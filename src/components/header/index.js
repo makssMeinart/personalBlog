@@ -39,9 +39,6 @@ export default function Header({ children, ...restProps }) {
             {theme === "light" ? <BsMoon /> : <RiSunFill />}
           </Header.Theme>
         </Header.Buttons>
-        <Header.Searchbox>
-          <Header.Search />
-        </Header.Searchbox>
         <Header.Burger
           onClick={() => setDropdownState((dropdownState) => !dropdownState)}
         />
@@ -65,14 +62,6 @@ Header.Logout = function HeaderLogout({ children, ...restProps }) {
 
 Header.Theme = function HeaderTheme({ children, ...restProps }) {
   return <Theme {...restProps}>{children}</Theme>
-}
-
-Header.Searchbox = function HeaderSearchbox({ children, ...restProps }) {
-  return <Searchbox>{children}</Searchbox>
-}
-
-Header.Search = function HeaderSearch({ children, ...restProps }) {
-  return <Search placeholder="Search the blog">{children}</Search>
 }
 
 Header.Burger = function HeaderBurger({ ...restProps }) {

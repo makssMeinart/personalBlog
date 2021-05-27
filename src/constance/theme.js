@@ -3,14 +3,14 @@ import styled, { createGlobalStyle } from "styled-components"
 export const lightTheme = {
   backgroundColor: "#D2D2D2",
   title: "#000",
-  description: "#0D0D0D",
+  description: "#3D3D3D",
   time: "#828282",
   blockBg: "whitesmoke",
   headerBar: "#D2D2D2",
   sidebarTop: "#828282",
   accent: "#CC2BB2",
-  inputBg: "#121212",
-  userInfo: "#828282",
+  inputBg: "white",
+  userInfo: "#000",
 }
 
 export const darkTheme = {
