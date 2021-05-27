@@ -3,7 +3,6 @@ import styled from "styled-components/macro"
 
 export const Card = styled.div`
   background-color: ${(props) => props.theme.blockBg};
-  min-height: 100%;
   padding: 1.5625rem;
   color: ${(props) => props.theme.title};
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35);
@@ -50,6 +49,7 @@ export const Col = styled.div`
   gap: 10px;
   font-size: 1.1rem;
   margin-bottom: .7rem;
+  line-height: 1.2;
 
   @media screen and (max-width: 530px) {
     margin-bottom: 0;

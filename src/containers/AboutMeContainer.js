@@ -42,15 +42,7 @@ export default function AboutMeContainer() {
         <AboutMe.Row flexDirection={"column"}>
           <AboutMe.Col>My Story:</AboutMe.Col>
           <AboutMe.Col>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            During the quarantine I somehow ended up on freecode camp on HTML tutorial, I find it pretty interesting to say at least. It wasn't long from there when I began to go through tutorials on yoututbe and after a month or so I was building out free PSD Templates and stopped around 10. I liked it but left like Im missing something out. Thats when I went and done a JS basics tutorial, It took me about 30 days to complete it with homework and other fun projects to do, That gave me a strong base and confidence to dive into React. When I just header about react I didn't really know what it is and what it's used, That changed rather quickly after couple small projects like: Todo List, Simple Web Pages, Half of Amazon Clone, I figured out that I'm ready to dive in deeper into something more complex and interesting. So I find probably best Netflix Clone on youtube by a Senior Developer and codded along trying to suck up as much information as possible after about 3 weeks the project was done so was I to begin building my own thing. I have spend a little time thinking what would be the best thing to build with my current skill and decided that its going to be a plane simple blog, It literally contains every feature I have learned in Netflix clone and since there is no help I had to figure out a lot of stuff on my own. With those 2 and other many smaller things build I think I'm ready for some real live experience  
           </AboutMe.Col>
         </AboutMe.Row>
       </AboutMe>
