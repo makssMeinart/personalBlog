@@ -35,18 +35,16 @@ export const Name = styled.p`
   color: ${(props) => props.theme.title};
 `
 export const Submit = styled.button`
-  padding: .5em 1.7em;
+  padding: 0.5em 1.7em;
   border: none;
-  background-color: ${props => props.theme.accent};
-  color: ${props => props.theme.title};
+  background-color: purple;
+  color: ${(props) => props.theme.title};
   cursor: pointer;
-  transition: .1s linear all;
+  transition: 0.1s linear all;
   border-radius: 5px;
   align-self: flex-end;
 
-
   :hover {
-    background-color: transparent;
-    border: 2px solid ${props => props.theme.title};
+    background-color: ${(props) => props.theme.accent};
   }
 `

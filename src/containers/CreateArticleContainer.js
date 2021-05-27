@@ -3,6 +3,8 @@ import styled from "styled-components/macro"
 import { CreateArticle } from "../components"
 import { useState } from "react"
 import { sendArticle } from "../helpers/sendArticle"
+import { useHistory } from "react-router"
+import * as ROUTES from "../constance/routePath"
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +21,16 @@ export function CreateArticleContainer() {
   const [description, setDescription] = useState("")
   const [content, setContent] = useState("")
   const [name, setName] = useState("")
+
+  // Hisory
+  const history = useHistory();
+
+  const redirectArticle = () => {
+    sendArticle(photoURL,title,description,content,name)
+
+    let path = ROUTES.FEED; 
+    history.push(path);
+  }
 
   return (
     <Wrapper>
@@ -52,7 +64,7 @@ export function CreateArticleContainer() {
         {/* Redirect Full page */}
         {/* UUID */}
         <CreateArticle.Holder>
-          <CreateArticle.Submit onClick={() => sendArticle(photoURL,title,description,content,name)}>
+          <CreateArticle.Submit onClick={() => redirectArticle()}>
             Submit
           </CreateArticle.Submit>
         </CreateArticle.Holder>
