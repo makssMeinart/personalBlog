@@ -26,24 +26,24 @@ export const Logout = styled.button`
   text-transform: uppercase;
   font-size: 0.6875rem;
   line-height: 13px;
-  color: ${props => props.theme.title};
+  color: ${(props) => props.theme.title};
   cursor: pointer;
   margin-right: 5px;
 `
 
 export const Theme = styled.button`
-  background-color: ${({theme}) => theme === "light" ? "#000" : "whitesmoke"};
+  background-color: ${({ theme }) =>
+    theme === "light" ? "#000" : "whitesmoke"};
   border-radius: 10px;
   border: none;
   width: 45px;
   height: 20px;
   cursor: pointer;
-  text-align: ${({theme}) => theme === "dark" ? "right" : "left"};
+  text-align: ${({ theme }) => (theme === "dark" ? "right" : "left")};
 
   svg {
-  color: ${({theme}) => theme === "light" ? "whitesmoke" : "#000"};
+    color: ${({ theme }) => (theme === "light" ? "whitesmoke" : "#000")};
   }
-
 `
 
 export const Burger = styled.div`
@@ -62,9 +62,11 @@ export const Burger = styled.div`
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: ${props => props.theme.title};
+    background-color: ${(props) => props.theme.title};
     transform: translateY(-50%);
-    top: 50%;
+    transform: rotate(${({dropdownState}) => dropdownState ? "0" : "45deg" });
+    top: ${({dropdownState}) => dropdownState ? "50%" : "45%"};
+    transition: .15s linear all;
   }
 
   :after {
@@ -72,15 +74,19 @@ export const Burger = styled.div`
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: ${props => props.theme.title};
+    background-color: ${(props) => props.theme.title};
     transform: translateY(-50%);
-    bottom: 0;
+    transform: rotate(${({dropdownState}) => dropdownState ? "0" : "-45deg" });
+    bottom: ${({dropdownState}) => dropdownState ? "0" : "45%"};
+    transition: .15s linear all;
   }
 
   div {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: ${props => props.theme.title};
+    background-color: ${(props) => props.theme.title};
+    opacity: ${({dropdownState}) => dropdownState ? "100%" : "0" };
+    transition: .15s linear all;
   }
 `

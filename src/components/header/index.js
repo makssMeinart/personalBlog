@@ -11,18 +11,19 @@ import {
 // Icons
 import { RiSunFill } from "react-icons/ri"
 import { BsMoon } from "react-icons/bs"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { FirebaseContext } from "../../context/firebase"
-import { ThemeContext } from "../../context/themeSwitch"
+import { CurrentTheme } from "../../context/themeSwitch"
 import HeaderDropdown from "../headerDropdown"
 import { UnlockScreen } from "../../constance/theme"
+import { FaWindows } from "react-icons/fa"
 
 export default function Header({ children, ...restProps }) {
-  const { setTheme, theme } = useContext(ThemeContext)
   // The dropdown state if true then show drop down else we will remove the global styling of
   // locking the body from scrolling
   const [dropdownState, setDropdownState] = useState(true)
   const Firebase = useContext(FirebaseContext)
+  const { theme, setTheme } = useContext(CurrentTheme)
 
   const toggleTheme = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark")
@@ -35,11 +36,12 @@ export default function Header({ children, ...restProps }) {
           <Header.Logout onClick={() => Firebase.auth.signOut()}>
             Logout
           </Header.Logout>
-          <Header.Theme onClick={toggleTheme} theme={theme}>
+          <Header.Theme theme={theme} onClick={() => toggleTheme()}>
             {theme === "light" ? <BsMoon /> : <RiSunFill />}
           </Header.Theme>
         </Header.Buttons>
         <Header.Burger
+          dropdownState={dropdownState}
           onClick={() => setDropdownState((dropdownState) => !dropdownState)}
         />
       </Inner>
