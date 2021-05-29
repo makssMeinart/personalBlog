@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/app.css"],"names":[],"mappings":"AAAA,iBACE,qBACF,CAEA,KACE,sBAAuB,CACvB,cAAe,CACf,iBACF","file":"main.f9b7ef07.chunk.css","sourcesContent":["*,*::before,*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: sans-serif;\n  font-size: 16px;\n  overflow-x: hidden;\n}"]}
