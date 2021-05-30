@@ -20,7 +20,7 @@ export default function App() {
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       <CurrentTheme.Provider value={{theme,setTheme}} >
         {/* Theme Switch */}
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}> 
           {/* Login */}
           <IsUserRedirect
             user={user}

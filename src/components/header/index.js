@@ -29,7 +29,7 @@ export default function Header({ children, ...restProps }) {
     theme === "dark" ? setTheme("light") : setTheme("dark")
   }
 
-  return (
+    return (
     <Container>
       <Inner>
         <Header.Buttons>
