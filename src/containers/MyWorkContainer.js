@@ -18,7 +18,7 @@ export default function MyWorkContainer() {
         <MyWork.Title>My Work</MyWork.Title>
         {/* Item */}
         <MyWork.Item>
-          <MyWork.Cover src={"../../../images/background/netflix.png"} />
+          <MyWork.Cover src={"images/background/netflix.png"} />
           <MyWork.Content>
             <MyWork.ContentTitle>Netflix Clone</MyWork.ContentTitle>
             <MyWork.ContentBody>Technology used: 1. Firebase && Firestore, 2. Firebase Authentication, 3. Compound Components, 4. Styled-Components, 5. Firesore DB, 6. Promises, 7. Responsive Design, 8. Hooks && Custom Hooks, 9. Protected && Redirect Routes </MyWork.ContentBody>
@@ -32,11 +32,12 @@ export default function MyWorkContainer() {
               <MyWork.Tools>Responsive</MyWork.Tools>
             </MyWork.Features>
             <MyWork.Continue href={"https://github.com/makssMeinart/netflix-clone"} target={"blank"}>Git Hub</MyWork.Continue>
+            <MyWork.Continue href={"https://makssmeinart.github.io/netflix-clone/"} target={"blank"}>Open Live</MyWork.Continue>
           </MyWork.Content>
         </MyWork.Item>
         {/* Second Item */}
         <MyWork.Item>
-          <MyWork.Cover src={"../../../images/background/personal-blog.jpeg"} />
+          <MyWork.Cover src={"images/background/personal-blog.jpeg"} />
           <MyWork.Content>
             <MyWork.ContentTitle>Personal Blog</MyWork.ContentTitle>
             <MyWork.ContentBody>
