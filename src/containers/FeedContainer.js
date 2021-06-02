@@ -37,7 +37,7 @@ export function FeedContainer() {
             <Feed.SearchInput
               setMessage={setMessage}
               value={message}
-              placeholder="Search for something.."
+              placeholder="Send post.."
             />
             <Feed.SearchButton onClick={() => sendPost(message, setMessage)}>
               <IoSendSharp />
