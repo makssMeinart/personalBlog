@@ -14,7 +14,7 @@ export const BackHome = styled(Link)`
   font-size: 12px;
   line-height: 14px;
   opacity: 0.6;
-  color: #ffffff;
+  color: ${props => props.theme.title};
 
   :hover {
     opacity: 1;
@@ -28,7 +28,7 @@ export const Title = styled.h3`
   line-height: 1.3125rem;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: ${props => props.theme.title};
 `
 
 export const Row = styled.div`

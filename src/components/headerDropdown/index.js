@@ -34,7 +34,7 @@ export default function HeaderDropdown({
         <Info>
           <Poster
             src={
-              "../../../../images/background/florian-olivo-4hbJ-eymZ1o-unsplash.jpg"
+              "images/background/menu-bg.jpg"
             }
           />
           <Holder>

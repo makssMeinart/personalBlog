@@ -8,6 +8,7 @@ import {
   ContentBody,
   Features,
   Tools,
+  Holder,
   Continue
 } from "./styles/myWork"
 
@@ -51,6 +52,10 @@ MyWork.Features = function MyWorkFeatures({children, ...restProps}) {
 
 MyWork.Tools = function MyWorkTools({children, ...restProps}) {
   return <Tools {...restProps}>{children}</Tools>
+}
+
+MyWork.Holder = function MyWorkHolder({children}) {
+  return <Holder >{children}</Holder>
 }
 
 MyWork.Continue = function MyWorkContinue({children, ...restProps}) {

@@ -21,7 +21,12 @@ export default function MyWorkContainer() {
           <MyWork.Cover src={"images/background/netflix.png"} />
           <MyWork.Content>
             <MyWork.ContentTitle>Netflix Clone</MyWork.ContentTitle>
-            <MyWork.ContentBody>Technology used: 1. Firebase && Firestore, 2. Firebase Authentication, 3. Compound Components, 4. Styled-Components, 5. Firesore DB, 6. Promises, 7. Responsive Design, 8. Hooks && Custom Hooks, 9. Protected && Redirect Routes </MyWork.ContentBody>
+            <MyWork.ContentBody>
+              Technology used: 1. Firebase && Firestore, 2. Firebase
+              Authentication, 3. Compound Components, 4. Styled-Components, 5.
+              Firesore DB, 6. Promises, 7. Responsive Design, 8. Hooks && Custom
+              Hooks, 9. Protected && Redirect Routes{" "}
+            </MyWork.ContentBody>
             <MyWork.Features>
               <MyWork.Tools>JS</MyWork.Tools>
               <MyWork.Tools>HTML</MyWork.Tools>
@@ -31,8 +36,20 @@ export default function MyWorkContainer() {
               <MyWork.Tools>Firebase</MyWork.Tools>
               <MyWork.Tools>Responsive</MyWork.Tools>
             </MyWork.Features>
-            <MyWork.Continue href={"https://github.com/makssMeinart/netflix-clone"} target={"blank"}>Git Hub</MyWork.Continue>
-            <MyWork.Continue href={"https://makssmeinart.github.io/netflix-clone/"} target={"blank"}>Open Live</MyWork.Continue>
+            <MyWork.Holder>
+              <MyWork.Continue
+                href={"https://github.com/makssMeinart/netflix-clone"}
+                target={"blank"}
+              >
+                Git Hub
+              </MyWork.Continue>
+              <MyWork.Continue
+                href={"https://makssmeinart.github.io/netflix-clone/"}
+                target={"blank"}
+              >
+                Open Live
+              </MyWork.Continue>
+            </MyWork.Holder>
           </MyWork.Content>
         </MyWork.Item>
         {/* Second Item */}
@@ -56,7 +73,12 @@ export default function MyWorkContainer() {
               <MyWork.Tools>Firebase</MyWork.Tools>
               <MyWork.Tools>Responsive</MyWork.Tools>
             </MyWork.Features>
-            <MyWork.Continue href={"https://github.com/makssMeinart/personalBlog"} target={"blank"}>Git Hub</MyWork.Continue>
+            <MyWork.Continue
+              href={"https://github.com/makssMeinart/personalBlog"}
+              target={"blank"}
+            >
+              Git Hub
+            </MyWork.Continue>
           </MyWork.Content>
         </MyWork.Item>
       </MyWork>

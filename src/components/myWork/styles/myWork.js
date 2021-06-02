@@ -63,6 +63,10 @@ export const Features = styled.div`
   padding-bottom: ${({noButton}) => noButton ? "0" : "90px"};
 `
 
+export const Holder = styled.div`
+  display: flex;
+`
+
 export const Tools = styled.div`
   font-size: 0.6875rem;
   line-height: 13px;

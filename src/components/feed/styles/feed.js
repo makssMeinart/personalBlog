@@ -63,6 +63,10 @@ export const SearchButton = styled.button`
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: 500px) {
+    margin: 0 15px;
+  }
+
   svg {
     color: ${props => props.theme.title};
     margin-left: 5px;
