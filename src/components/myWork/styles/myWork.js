@@ -65,6 +65,8 @@ export const Features = styled.div`
 
 export const Holder = styled.div`
   display: flex;
+  gap: 10px;
+  justify-self: flex-end;
 `
 
 export const Tools = styled.div`
