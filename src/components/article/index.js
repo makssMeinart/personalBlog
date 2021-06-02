@@ -17,7 +17,7 @@ import {
 export default function Article({ item }) {
 
   function addDefaultSrc(e) {
-    e.target.src = "../../../images/article/markus-spiske-iar-afB0QQw-unsplash.jpg"
+    e.target.src = "images/article/markus-spiske-iar-afB0QQw-unsplash.jpg"
   }
   return (
     <Container>
